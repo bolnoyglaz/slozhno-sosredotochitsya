@@ -2,3 +2,366 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+
+:root {
+  --rec-color-decoration: #ff0070;
+  --header-text-color: #ff0070;
+  --main-title: #ff0070;
+  --title-color: #DB00FF;
+  --text-theme-color: #000028;
+  --text-color: #F1B2CE;
+  --background-color: #ff0070;
+  --shadow-text-color:#ff0070;
+  --outline-color-decoration: #ff0070;
+  --background-image-theme: url(../images/cover-image-dark.png);
+}
+
+/* Стили для планшетов (ширина экрана от 768px до 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .page {
+    width: 768px;
+    margin: 0 auto;
+  }
+
+  .header {
+    width: 768px;
+    height: 1024px; 
+  }
+
+  .header__grid {
+    grid-template-rows: 1fr 99px 1fr;
+  }
+
+  .header__theme-menu {
+    justify-content: center;
+    align-items: end;
+    flex-direction: column;
+  }
+
+  .header__theme-menu-list {
+    margin-right: 20px;
+    height: 98px;
+    flex-direction: column;
+  }
+
+  .header__theme-menu-title {
+    font-size: 120px;
+    font-weight: 700;
+    line-height: 99px;
+  }
+
+  .header__theme-menu-information {
+    width: 364px;
+    height: 117px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 23px;
+    margin-top: 163px;
+    margin-left: 384px;
+  }
+
+  .header__rec-decoration-block {
+    left: 687px;
+  }
+
+  /* main */
+  .main {
+    width: 768px;
+  }
+
+  .main__concentrate {
+    gap: 26px;
+  }
+  
+  .main__text {
+    line-height: 23.5px;
+  }
+
+  .main__wrapper-block {
+    gap: 20px;
+  }
+
+  .main__reduce-concentration {
+    margin-top: 79px;
+  }
+
+  .main__title_grid-diference {
+    width: 236px;
+  }
+
+  .main__wrapper_grid-block {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main__how-section {
+    margin-top: 80px;
+    gap: 27px;
+  }
+
+  .main__how-section__wrapper-block {
+    gap: 20px;
+  }
+
+  .main__picture-section {
+    margin-top: 77px;
+    height: 850px;
+    padding: 0 20px;
+  }
+
+  .main__picture-block {
+    grid-template-columns: 229px 230px 229px;
+    grid-template-rows: 192px 230px 318px;
+  }
+
+  .main__picture-title {
+    width: 100%;
+  }
+
+  .footer {
+    width: 768px;
+    height: 1024px;
+    margin-top: 32px;
+  }
+
+  .footer__title {
+    font-size: 120px;
+    line-height: 99px;
+  }
+
+  /* Картинки */
+
+  .main__picture-block-sun {
+    width: 479px;
+    height: 192px;
+  }
+  
+  .main__picture-block-ice-cream {
+    width: 229px;
+    height: 441px;
+  }
+  
+  .main__picture-block-books {
+    width: 230px;
+    height: 230px;
+  }
+  
+  .main__picture-block-music {
+    width: 229px;
+    height: 568px;
+  }
+  
+  .main__picture-block-street {
+    width: 479px;
+    height: 318px;
+    margin-top: 0;
+  }
+}
+
+/* Стили для телефонов (ширина экрана до 768px) */
+@media screen and (max-width: 767px) {
+  .page {
+    width: 375px;
+    margin: 0 auto;
+  }
+
+  .header {
+    width: 375px;
+    height: 668px; 
+  }
+
+  .header__grid {
+    grid-template-rows: 1fr 192px 1fr;
+  }
+
+  .header__theme-menu {
+    justify-content: start;
+    align-items: end;
+    flex-direction: column;
+  }
+
+  .header__theme-menu-list {
+    margin-top: 52px;
+    margin-right: 10px;
+    height: 98px;
+    flex-direction: column;
+  }
+
+  .header__theme-menu-title {
+    font-size: 116px;
+    font-weight: 700;
+    height: 192px;
+    padding-left: 11px;
+    padding-top: 4px;
+    line-height: 93px;
+  }
+
+  .header__theme-menu-information {
+    width: 355px;
+    height: 117px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 23px;
+    margin: 55px 10px 0;
+  }
+
+  .header__rec-decoration-block {
+    left: 304px;
+  }
+
+  .header__rec-decoration-block-circle-border-bottom-left {
+    bottom: 10px;
+    left: 10px;
+  }
+
+  /* main */
+
+  .main {
+    width: 375px;
+    margin: 40px 0 0;
+    padding: 0;
+  }
+
+  .main__concentrate {
+    flex-direction: column;
+    gap: 20px;
+    width: 375px;
+    padding: 0 10px;
+  }
+  
+  .main__text {
+    line-height: 23.5px;
+  }
+
+  .main__wrapper-block {
+    width: 355px;
+    gap: 20px;
+  }
+
+  .main__reduce-concentration {
+    margin-top: 50px;
+    padding: 0 10px;
+  }
+
+  .main__title_grid-diference {
+    width: 355px;
+  }
+
+  .main__wrapper_grid-block {
+    display: flex;
+    flex-direction: column;
+  }
+
+ 
+  .main__how-section {
+    width: 375px;
+    margin-top: 50px;
+    padding: 0 10px;
+    gap: 15px;
+    flex-direction: column;
+  }
+
+  .main__title {
+    width: 355px;
+  }
+
+  .main__how-section__wrapper-block {
+    width: 355px;
+    gap: 20px;
+  }
+
+  .main__picture-section {
+    margin-top: 49px;
+    width: 375px;
+    height: 1400px;
+    padding: 0 10px;
+  }
+
+  .main__picture-title {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .main__picture-block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .main__picture-block-sun {
+    width: 355px;
+    min-height: 142px;
+  }
+
+  .main__picture-block-ice-cream {
+    width: 355px;
+    min-height: 355px;
+  }
+
+  .main__picture-block-books {
+    width: 355px;
+    min-height: 355px;
+  }
+
+  .main__picture-block-music {
+    width: 355px;
+    min-height: 237px;
+  }
+
+  .main__picture-block-street {
+    width: 355px;
+    min-height: 237px;
+    margin-top: 0;
+  }
+
+  .footer {
+    width: 375px;
+    max-height: 668px;
+    padding: 0;
+    margin-top: 40px;
+  }
+
+  .footer__title {
+    font-size: 116px;
+    font-weight: 700;
+    line-height: 93px;
+  } 
+
+  .footer__decoration-border-top-right {
+    top: 10px;
+    right: 10px;
+  }
+
+  .footer__decoration-border-bottom-left {
+    bottom: 10px;
+    left: 10px;
+  }
+
+  /* Картинки */
+
+  .main__picture-block-sun {
+    width: 355px;
+    height: 142px;
+  }
+  
+  .main__picture-block-ice-cream {
+    width: 355px;
+    height: 355px;
+  }
+  
+  .main__picture-block-books {
+    width: 355px;
+    height: 355px;
+  }
+  
+  .main__picture-block-music {
+    width: 355px;
+    height: 237px;
+  }
+  
+  .main__picture-block-street {
+    width: 355px;
+    height: 237px;
+    margin-top: 0;
+  }
+}
