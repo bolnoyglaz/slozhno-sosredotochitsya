@@ -4,9 +4,35 @@
   переключая тему
 */
 
+:root .theme_light {
+  --rec-color-decoration: #353430;
+  --title-color: #FFC2E6;
+  --header-text-color: #353430;
+  --main-title: #353430;
+  --text-color: #353430;
+  --text-theme-color: #353430;
+  --background-color: #FFC2E6;
+  --shadow-text-color: #FFC2E6;
+  --outline-color-decoration: #353430;
+  --background-image-theme: url(../images/cover-image-light.png);
+} 
+
 .page.theme_light {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  background-image: var(--background-image-theme);
+  color: var(--text-color);
+}
+ 
+@media (prefers-color-scheme: light) {
+  :root {
+    --rec-color-decoration: #353430;
+    --title-color: #FFC2E6;
+    --header-text-color: #353430;
+    --main-title: #353430;
+    --text-color: #353430;
+    --text-theme-color: #353430;
+    --background-color: #FFC2E6;
+    --shadow-text-color: #FFC2E6;
+    --outline-color-decoration: #353430;
+    --background-image-theme: url(../images/cover-image-light.png);
+  }
 }
