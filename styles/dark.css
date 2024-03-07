@@ -14,10 +14,7 @@
   --background-color: #ff0070;
   --shadow-text-color:#ff0070;
   --outline-color-decoration: #ff0070;
+  --visibility-status-rec: visible;
+  --hover-botton-border: 1px solid rgba(255, 0, 112, 0.4);
   --background-image-theme: url(../images/cover-image-dark.png);
-}
-
-.page.theme_dark {
-  background-image: var(--background-image-theme);
-  color: var(--text-color);
 }
