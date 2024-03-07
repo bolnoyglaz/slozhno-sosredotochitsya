@@ -14,13 +14,10 @@
   --background-color: #FFC2E6;
   --shadow-text-color: #FFC2E6;
   --outline-color-decoration: #353430;
+  --visibility-status-rec: hidden;
+  --hover-botton-border: 1px solid rgba(50, 49, 45, 0.4);
   --background-image-theme: url(../images/cover-image-light.png);
 } 
-
-.page.theme_light {
-  background-image: var(--background-image-theme);
-  color: var(--text-color);
-}
  
 @media (prefers-color-scheme: light) {
   :root {
@@ -33,6 +30,7 @@
     --background-color: #FFC2E6;
     --shadow-text-color: #FFC2E6;
     --outline-color-decoration: #353430;
+    --visibility-status-rec: hidden;
     --background-image-theme: url(../images/cover-image-light.png);
   }
 }
