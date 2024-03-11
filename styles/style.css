@@ -15,6 +15,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  overflow-x: hidden;
 }
 
 .header {
@@ -43,12 +44,13 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  /* высота определяется, так как сам nav - это грид блок. Если убрать высоту,
+  то блок ul растянится на весь nav */
   height: 26px;
 }
 
 .header__theme-menu-item {
   display: block;
-  height: 26px;
   text-align: center;
 }
 
@@ -77,8 +79,10 @@
 .header__theme-menu-information {
   margin-top: 114px;
   margin-left: 513px;
-  width: 491px;
+  /* header__theme-menu-information - грид блок, если не указать высоту - блок 
+  растянится на высоту родителя */
   height: 71px;
+  width: 491px;
   font-weight: 700;
   line-height: 23px;
   background-color: var(--background-color);
@@ -95,8 +99,8 @@
 .main__concentrate {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  padding: 0 20px;
+  gap: 20px;
+  padding: 0 20px;  
 }
 
 .main__title {
@@ -184,13 +188,16 @@
 /* picture block */
 
 .main__picture-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 80px;
   padding: 0 20px;
-  height: 1091px;
 }
 
 .main__picture-title {
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .main__picture-block {
@@ -354,22 +361,19 @@
 }
 
 /* Стили для планшетов (ширина экрана от 768px до 1024px) */
-@media screen and (min-width: 768px) and (max-width: 1023.9px) {
-  .page {
-    width: 768px;
-  }
-
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .header {
-    width: 768px;
+    width: 100%;
     height: max(1024px, 100vh);
+    align-items: center;
   }
 
   .header__grid {
+    width: 100%;
     grid-template-rows: 1fr 99px 1fr;
   }
 
   .header__theme-menu {
-    justify-content: center;
     align-items: end;
     flex-direction: column;
   }
@@ -381,41 +385,41 @@
   }
 
   .header__theme-menu-title {
+    width: 577px;
     font-size: 120px;
-    font-weight: 700;
     line-height: 99px;
   }
 
   .header__theme-menu-information {
     width: 364px;
+    /* header__theme-menu-information - грид блок, если не указать высоту - блок 
+    растянится на высоту родителя */
     height: 117px;
     font-size: 18px;
-    font-weight: 700;
-    line-height: 23px;
     margin-top: 163px;
     margin-left: 384px;
   }
 
   .header__rec-decoration-block {
-    left: 687px;
+    right: 50px;
   }
 
   /* main */
   
   .main {
-    width: 768px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .main__concentrate {
-    gap: 26px;
-  }
-  
-  .main__text {
-    line-height: 23.5px;
+    width: 100%;
   }
 
-  .main__wrapper-block {
-    gap: 20px;
+  .main__title {
+    /* поставлен мин. значение, иначе не совпадает с блоком */
+    min-width: 236px;
   }
 
   .main__reduce-concentration {
@@ -433,17 +437,14 @@
 
   .main__how-section {
     margin-top: 80px;
-    gap: 27px;
-  }
-
-  .main__how-section__wrapper-block {
     gap: 20px;
+    width: 100%;
   }
 
   .main__picture-section {
     margin-top: 77px;
     height: 850px;
-    padding: 0 20px;
+    width: 100%;
   }
 
   .main__picture-block {
@@ -451,12 +452,8 @@
     grid-template-rows: 192px 230px 318px;
   }
 
-  .main__picture-title {
-    width: 100%;
-  }
-
   .footer {
-    width: 768px;
+    width: 100%;
     height: max(1024px, 100vh);
     margin-top: 32px;
   }
@@ -497,12 +494,24 @@
 
 /* Стили для телефонов (ширина экрана до 768px) */
 @media screen and (max-width: 767.9px) {
-  .page {
-    width: 375px;
+  .decorated-zone::before {
+    top: 10px;
+    right: 10px;
+  }
+
+  .decorated-zone::after {
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .header__rec-decoration-block-circle {
+    top: 18px;
+    right: 19px;
   }
 
   .header {
-    width: 375px;
+    width: 100%;
+    justify-content: center;
     height: max(668px, 100vh);
   }
 
@@ -525,8 +534,8 @@
 
   .header__theme-menu-title {
     font-size: 116px;
-    font-weight: 700;
     height: 192px;
+    width: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
     padding-left: 11px;
     padding-top: 4px;
     line-height: 93px;
@@ -536,42 +545,31 @@
     width: 355px;
     height: 117px;
     font-size: 18px;
-    font-weight: 700;
-    line-height: 23px;
     margin: 55px 10px 0;
   }
 
   .header__rec-decoration-block {
-    left: 304px;
-  }
-
-  .header__rec-decoration-block-circle-border-bottom-left {
-    bottom: 10px;
-    left: 10px;
+    top: 10px;
+    right: 40px;
   }
 
   /* main */
 
   .main {
-    width: 375px;
     margin: 40px 0 0;
     padding: 0;
+    width: 100%;
   }
 
   .main__concentrate {
     flex-direction: column;
-    gap: 20px;
-    width: 375px;
+    width: 100%;
+    gap: 19px;
     padding: 0 10px;
-  }
-  
-  .main__text {
-    line-height: 23.5px;
   }
 
   .main__wrapper-block {
-    width: 355px;
-    gap: 20px;
+    width: 100%;
   }
 
   .main__reduce-concentration {
@@ -586,12 +584,12 @@
   .main__wrapper_grid-block {
     display: flex;
     flex-direction: column;
+    gap: 19px;
   }
 
- 
   .main__how-section {
-    width: 375px;
-    margin-top: 50px;
+    width: 100%;
+    margin-top: 48px;
     padding: 0 10px;
     gap: 15px;
     flex-direction: column;
@@ -602,19 +600,18 @@
   }
 
   .main__how-section__wrapper-block {
-    width: 355px;
-    gap: 20px;
+    width: 100%;
+    margin-top: 5px;
   }
 
   .main__picture-section {
     margin-top: 49px;
-    width: 375px;
+    width: 100%;
     height: 1400px;
     padding: 0 10px;
   }
 
   .main__picture-title {
-    width: 100%;
     margin-bottom: 10px;
   }
 
@@ -651,7 +648,7 @@
   }
 
   .footer {
-    width: 375px;
+    width: 100%;
     padding: 0;
     height: max(668px, 100vh);
     margin-top: 40px;
@@ -659,19 +656,8 @@
 
   .footer__title {
     font-size: 116px;
-    font-weight: 700;
     line-height: 93px;
   } 
-
-  .footer__decoration-border-top-right {
-    top: 10px;
-    right: 10px;
-  }
-
-  .footer__decoration-border-bottom-left {
-    bottom: 10px;
-    left: 10px;
-  }
 
   /* Картинки */
 
