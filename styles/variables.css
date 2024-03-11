@@ -16,5 +16,5 @@
   --visibility-status-rec: visible;
   --hover-botton-border: 1px solid rgba(255, 0, 112, 0.4);
   --background-image-theme: url(../images/cover-image-dark.png);
-  --font-family-text: 'IBM Plex Mono', Times, Arial, sans-serif;
+  --font-family-text: 'IBM Plex mono', Arial, monospace;
 }
