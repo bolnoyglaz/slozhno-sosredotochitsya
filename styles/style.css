@@ -1,3 +1,4 @@
+
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
@@ -20,7 +21,7 @@
 .header {
   position: relative;
   display: flex;
-  max-width: min(100%, 1024px);
+  width: min(100%, 1024px);
   height: max(768px, 100vh);
   flex-direction: column;
 }
@@ -435,7 +436,7 @@
   .footer {
     width: 100%;
     height: min(1024px, 100vh);
-    margin-top: 32px;
+    margin-top: 60px;
   }
 
   .footer__title {
